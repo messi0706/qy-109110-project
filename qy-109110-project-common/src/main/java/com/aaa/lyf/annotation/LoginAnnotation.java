@@ -19,7 +19,7 @@ package com.aaa.lyf.annotation;
  *       自定义注解+AOP实现自动日志，真正实现的地方在于AOP，自定义注解只是做了一个标识
  *
  */
-public @interface LoginAnnotaion {
+public @interface LoginAnnotation {
     /**
      * @Author  LYF MESSI
      * @date: 2020/7/15 19:53

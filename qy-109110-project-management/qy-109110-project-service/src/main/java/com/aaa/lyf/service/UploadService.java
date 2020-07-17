@@ -23,7 +23,7 @@ public class UploadService {
     private FtpProperties ftpProperties;
 
     /**
-     * @author Seven Lee
+     * @author LYF
      * @description
      *      文件上传
      * @param [file]

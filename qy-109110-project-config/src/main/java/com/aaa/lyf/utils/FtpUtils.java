@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @Company AAA软件教育
- * @Author Seven Lee
+ * @Author lyf
  * @Date Create in 2020/7/10 11:11
  * @Description
  **/
@@ -23,7 +22,7 @@ public class FtpUtils {
      * @param [host, port, username, password, basePath, filePath, fileName, inputStream]
      * @return java.lang.Boolean
      * @throws
-     * @author Seven Lee
+     * @author lyf
      * @description ftp文件上传方法工具
      * @date 2020/7/10
      **/

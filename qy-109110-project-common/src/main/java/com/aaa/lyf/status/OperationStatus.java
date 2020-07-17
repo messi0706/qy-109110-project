@@ -9,11 +9,18 @@ package com.aaa.lyf.status;
  */
 public enum OperationStatus {
 
-    SUCCESS("1", "操作成功"),
-    FAILED("2", "操作失败"),
-    DELETE_OPERATION("3", "删除操作"),
-    UPDATE_OPERATION("4", "修改操作"),
-    INSERT_OPERATION("5", "新增操作"),
+    SUCCESS("1","操作成功"),
+    FAILED("2","操作失败"),
+    DELETE_OPERATION_SUCCESS("3", "删除操作成功"),
+    DELETE_OPERATION_FALSE("11", "删除操作失败"),
+    UPDATE_OPERATION_SUCCESS("4", "修改操作成功"),
+    UPDATE_OPERATION_FALSE("12", "修改操作失败"),
+    INSERT_OPERATION_SUCCESS("5", "新增操作成功"),
+    INSERT_OPERATION_FALSE("13", "新增操作失败"),
+    SELECT_OPERATION_SUCCESS("14","查询成功"),
+    SELECT_OPERATION_FALSE("15","查询失败"),
+    UPLOAD_SUCCESS("20005","文件上传成功"),
+    UPLOAD_FAILED("10005","文件上传失败"),
     ZUUL_FILTER_SUCCESS("6", "路由过滤成功"),
     ZUUL_FILTER_FAILED("7", "路由过滤失败"),
     ZUUL_FILTER_TOKEN_SUCCESS("8", "token值存在"),

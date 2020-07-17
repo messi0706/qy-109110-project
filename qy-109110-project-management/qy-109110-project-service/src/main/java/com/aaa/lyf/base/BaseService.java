@@ -57,8 +57,9 @@ public abstract class BaseService<T> {
     /**
      *
      * 根据主键批量删除
+     * @param ids
      */
-    public Integer deleteByIds(List<Integer> ids) {
+    public Integer deleteByIds (List<Integer> ids) {
         /**
          * delete * from user where 1=1 and id in (1,2,3,4,5,6);
          * andIn('id')----->id就是数据库中的主键名称
@@ -80,6 +81,10 @@ public abstract class BaseService<T> {
     public Integer batchUpdate(T t, Integer[] ids) {
         Example example = Example.builder(getTypeArguement()).where(Sqls.custom().andIn("id", Arrays.asList(ids))).build();
         return mapper.updateByExample(t, example);
+    }
+    public Integer batchDelete(List<Object> ids) throws Exception {
+        Example example = Example.builder(getTypeArguement()).where(Sqls.custom().andIn("id", ids)).build();
+        return mapper.deleteByExample(example);
     }
     /**
      * 查询一条数据

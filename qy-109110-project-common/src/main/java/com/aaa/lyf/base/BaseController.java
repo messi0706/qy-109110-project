@@ -22,163 +22,94 @@ public class BaseController {
 
 
     /**
-     * @param null
+     * 登陆成功
+     *   使用系统消息
      * @return
-     * @Author LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 登陆成功  使用系统消息
      */
-    protected ResultData loginSuccess() {
+    protected ResultData loginSuccess(){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(LOGIN_SUCCESS.getMsg());
-
         return resultData;
-
     }
 
-
-
-        /**
-         * @Author  LYF MESSI
-         * @date: 2020/7/9 15:27
-         * @description 登陆成功  自定义返回消息
-         * @param null
-         * @return
-         */
-        protected  ResultData loginSuccess(String msg) {
-            ResultData resultData = new ResultData();
-            resultData.setCode(LOGIN_SUCCESS.getCode());
-            resultData.setMsg(msg);
-
-            return resultData;
-
-        }
-
-
     /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 登陆成功  返回数据信息 使用系统消息
-     * @param null
+     * 登陆成功
+     *   使用自定义消息
+     *     也就是自己定义的方法
+     * @param msg
      * @return
      */
-    protected  ResultData loginSuccess(Object data){
+    protected ResultData loginSuccess(String msg){
+        ResultData resultData = new ResultData();
+        resultData.setCode(LOGIN_SUCCESS.getCode());
+        resultData.setMsg(msg);
+        return resultData;
+    }
+
+    /**
+     * 登陆成功
+     *    返回数据信息，使用系统消息
+     * @param data
+     * @return
+     */
+    protected ResultData loginSuccess(Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(LOGIN_SUCCESS.getMsg());
         resultData.setData(data);
-
         return resultData;
-
     }
+
     /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 登陆成功  返回数据信息 自定义消息
-     * @param null
+     * 登陆成功
+     *    返回数据信息，使用自定义消息
+     * @param msg
+     * @param data
      * @return
      */
-    protected  ResultData loginSuccess(String msg,Object data){
+    protected ResultData loginSuccess(String msg,Object data){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_SUCCESS.getCode());
         resultData.setMsg(msg);
         resultData.setData(data);
-
         return resultData;
-
     }
+
     /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 登陆失败  使用系统消息
-     * @param null
+     * 登录失败
+     *  使用系统消息
      * @return
      */
-    protected  ResultData loginFailed(){
+    protected ResultData loginFailed(){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(LOGIN_FAILED.getMsg());
-
         return resultData;
-
     }
 
-
     /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 登陆失败   使用系统消息详细解释说明
-     * @param null
+     * 登录失败
+     *    使用系统消息，详细解释说明
+     * @param datail
      * @return
      */
-    protected  ResultData loginFailed(String detail){
+    protected ResultData loginFailed(String datail){
         ResultData resultData = new ResultData();
         resultData.setCode(LOGIN_FAILED.getCode());
         resultData.setMsg(LOGIN_FAILED.getMsg());
-        resultData.setDetail(detail);
-
-        return resultData;
-
-    }
-    /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 用户名已存在.系统消息
-     * @param null
-     * @return
-     */
-    protected  ResultData  loginExist(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(LOGIN_EXIST.getCode());
-        resultData.setMsg(LOGIN_EXIST.getMsg());
+        resultData.setDetail(datail);
         return resultData;
     }
-
-
     /**
-     * @Author  LYF MESSI
-     * @date: 2020/7/9 15:27
-     * @description 用户名不存在.系统消息
-     * @param null
-     * @return
-     */
-    protected ResultData userNotExist(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(USER_NOT_EXIST.getCode());
-        resultData.setMsg(USER_NOT_EXIST.getMsg());
-        return  resultData;
-    }
-
-    /**
-     * 密码错误
-     * 系统消息
-     * @return
-     */
-    protected  ResultData passwordWrong(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(PASSWORD_WRONG.getCode());
-        resultData.setMsg(PASSWORD_WRONG.getCode());
-        return  resultData;
-    }
-
-    /**
-     * 用户退出异常
-     * 系统消息
-     * @return
-     */
-    protected  ResultData loginWrong(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(LOGIN_WRONG.getCode());
-        resultData.setMsg(LOGIN_WRONG.getMsg());
-        return  resultData;
-    }
-
-    /**
-     * 操作成功，返回系统消息
-     *
-     */
-    protected ResultData operationSuccess(){
+     * @description
+     *      操作成功，返回系统消息
+     * @param []
+     * @date 2020/7/9
+     * @return com.aaa.lee.base.ResultData
+     * @throws
+     **/
+    protected ResultData operationSuccess() {
         ResultData resultData = new ResultData();
         resultData.setCode(SUCCESS.getCode());
         resultData.setMsg(SUCCESS.getMsg());
@@ -186,53 +117,9 @@ public class BaseController {
     }
 
     /**
-     * 操作失败，返回系统消息
      *
-     */
-    protected ResultData operationFailed(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(FAILED.getCode());
-        resultData.setMsg(FAILED.getMsg());
-        return resultData;
-    }
-
-    /**
-     * 删除操作返回系统消息
-     *
-     */
-    protected  ResultData deleteOperation(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(DELETE_OPERATION.getCode());
-        resultData.setMsg(DELETE_OPERATION.getMsg());
-        return  resultData;
-    }
-
-    /**
-     * 修改操作返回消息
-     *
-     */
-    protected  ResultData updateOperation(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(UPDATE_OPERATION.getCode());
-        resultData.setMsg(UPDATE_OPERATION.getMsg());
-        return resultData;
-    }
-
-    /**
-     * 新增返回系统消息
-     *
-     */
-    protected  ResultData insertOperation(){
-        ResultData resultData = new ResultData();
-        resultData.setCode(INSERT_OPERATION.getCode());
-        resultData.setMsg(INSERT_OPERATION.getMsg());
-        return  resultData;
-    }
-
-    /**
-     * @author Seven Lee
      * @description
-     *      操作成功，返回系统消息
+     *      操作成功，返回系统消息,返回数据信息
      * @param []
      * @date 2020/7/9
      * @return com.aaa.lee.base.ResultData
@@ -247,12 +134,25 @@ public class BaseController {
     }
 
     /**
-
-
-    /**
-     * @author Seven Lee
+     *
      * @description
      *      操作失败，返回系统消息
+     * @param []
+     * @date 2020/7/9
+     * @return com.aaa.lee.base.ResultData
+     * @throws
+     **/
+    protected ResultData operationFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(FAILED.getCode());
+        resultData.setMsg(FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     *
+     * @description
+     *      操作失败，返回自定义消息
      * @param []
      * @date 2020/7/9
      * @return com.aaa.lee.base.ResultData
@@ -265,5 +165,120 @@ public class BaseController {
         return resultData;
     }
 
+    /**
+     * 新增成功，返回系统消息
+     * @return
+     */
+    protected ResultData insertSuccess(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setData(data);
+        resultData.setCode(INSERT_OPERATION_SUCCESS.getCode());
+        resultData.setMsg(INSERT_OPERATION_SUCCESS.getMsg());
+
+        return resultData;
+    }
+
+
+    /**
+     * 新增失败，返回系统消息
+     * @return
+     */
+    protected ResultData insertFalse(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(INSERT_OPERATION_FALSE.getCode());
+        resultData.setMsg(INSERT_OPERATION_FALSE.getMsg());
+        return  resultData;
+    }
+
+    /**
+     * 删除成功，返回系统消息
+     * @return
+     */
+    protected ResultData delectSuccess(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(DELETE_OPERATION_SUCCESS.getCode());
+        resultData.setMsg(DELETE_OPERATION_SUCCESS.getMsg());
+        resultData.setData(data);
+        return  resultData;
+    }
+
+    /**
+     * 删除失败，返回系统消息
+     * @return
+     */
+    protected ResultData delectFalse(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(DELETE_OPERATION_FALSE.getCode());
+        resultData.setMsg(DELETE_OPERATION_FALSE.getMsg());
+        return  resultData;
+    }
+
+    /**
+     * 修改成功，返回系统消息
+     * @return
+     */
+    protected ResultData updateSuccess(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(UPDATE_OPERATION_SUCCESS.getCode());
+        resultData.setMsg(UPDATE_OPERATION_SUCCESS.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+
+    /**
+     * 修改失败，返回系统消息
+     * @return
+     */
+    protected ResultData updateFalse(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(UPDATE_OPERATION_FALSE.getCode());
+        resultData.setMsg(UPDATE_OPERATION_FALSE.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 文件上传成功
+     * @return
+     */
+    protected ResultData uploadSuccess(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(UPLOAD_SUCCESS.getCode());
+        resultData.setMsg(UPLOAD_SUCCESS.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 文件上传失败
+     * @return
+     */
+    protected ResultData uploadFalse(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(UPLOAD_FAILED.getCode());
+        resultData.setMsg(UPLOAD_FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     * 查询成功，返回系统消息
+     * @return
+     */
+    protected ResultData selectSuccess(Object data){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SELECT_OPERATION_SUCCESS.getCode());
+        resultData.setMsg(SELECT_OPERATION_SUCCESS.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+
+    /**
+     * 查询失败，返回系统消息
+     * @return
+     */
+    protected ResultData selectFalse(){
+        ResultData resultData = new ResultData();
+        resultData.setCode(SELECT_OPERATION_FALSE.getCode());
+        resultData.setMsg(SELECT_OPERATION_FALSE.getMsg());
+        return resultData;
+    }
 
 }
