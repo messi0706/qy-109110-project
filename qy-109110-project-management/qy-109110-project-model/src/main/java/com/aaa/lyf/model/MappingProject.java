@@ -1,22 +1,20 @@
 package com.aaa.lyf.model;
 
-
-import com.aaa.lyf.base.BaseModel;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import javax.persistence.Column;
-import javax.persistence.Table;
-import java.util.Date;
 
-@Table(name = "t_mapping_project")
+import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class MappingProject   extends BaseModel {
+@Table(name = "t_mapping_project")
+public class MappingProject {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 项目类型
@@ -29,6 +27,12 @@ public class MappingProject   extends BaseModel {
      */
     @Column(name = "project_name")
     private String projectName;
+
+    /**
+     * 项目金额（万元）
+     */
+    @Column(name = "project_amount")
+    private Double projectAmount;
 
     /**
      * 项目负责人
@@ -49,28 +53,16 @@ public class MappingProject   extends BaseModel {
     private String endDate;
 
     /**
-     * 验收机构
-     */
-    @Column(name = "acceptance_department")
-    private String acceptanceDepartment;
-
-    /**
-     * 项目金额（万元）
-     */
-    @Column(name = "project_amount")
-    private Double projectAmount;
-
-    /**
-     * 项目成果汇交状态 0:通过 1:未通过 2:已提交 3:未提交
-     */
-    @Column(name = "results_status")
-    private Integer resultsStatus;
-
-    /**
      * 完成工期
      */
     @Column(name = "complete_time")
     private String completeTime;
+
+    /**
+     * 验收机构
+     */
+    @Column(name = "acceptance_department")
+    private String acceptanceDepartment;
 
     /**
      * 验收报告文号
@@ -123,13 +115,13 @@ public class MappingProject   extends BaseModel {
      * 获奖时间
      */
     @Column(name = "winning_time")
-    private Date winningTime;
+    private String winningTime;
 
     /**
      * 验收时间
      */
     @Column(name = "acceptance_time")
-    private Date acceptanceTime;
+    private String acceptanceTime;
 
     /**
      * 基本内容
@@ -161,6 +153,18 @@ public class MappingProject   extends BaseModel {
     private Integer schedule;
 
     /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private String createTime;
+
+    /**
+     * 更改时间
+     */
+    @Column(name = "modify_time")
+    private String modifyTime;
+
+    /**
      * 备注
      */
     private String memo;
@@ -175,6 +179,12 @@ public class MappingProject   extends BaseModel {
      */
     @Column(name = "audit_status")
     private Integer auditStatus;
+
+    /**
+     * 项目成果汇交状态 0:通过 1:未通过 2:已提交 3:未提交
+     */
+    @Column(name = "results_status")
+    private Integer resultsStatus;
 
     /**
      * 中央子午线
@@ -200,15 +210,15 @@ public class MappingProject   extends BaseModel {
     private String fundingSource;
 
     /**
-     *
-     委托单位
+     * 
+委托单位
      */
     @Column(name = "entrust_unit")
     private String entrustUnit;
 
     /**
-     *
-     承建单位
+     * 
+承建单位
      */
     @Column(name = "accept_unit")
     private String acceptUnit;
@@ -221,7 +231,7 @@ public class MappingProject   extends BaseModel {
 
     /**
      * 固定
-     电话
+电话
      */
     private String phone;
 
@@ -246,12 +256,13 @@ public class MappingProject   extends BaseModel {
      * 合同上传时间
      */
     @Column(name = "contract_time")
-    private Date contractTime;
+    private String contractTime;
 
     /**
      * 坐标
      */
     private String coordinate;
+
 
 
 }

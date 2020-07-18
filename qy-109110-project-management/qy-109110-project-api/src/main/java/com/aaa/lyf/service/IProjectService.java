@@ -116,7 +116,7 @@ public interface IProjectService {
      * @param id
      */
     @PostMapping("/deleteUsersById")
-    Integer deleteUsersById(@RequestParam("id") List<Object> ids);
+    Integer deleteUsersById(@RequestParam("id") List<Integer> ids);
     /**
      *@Description:
      * 根据id查询用户信息
