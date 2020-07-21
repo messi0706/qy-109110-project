@@ -84,7 +84,7 @@ public class UserController extends BaseController {
      *@date: 2020/7/16 0016
      */
     @PostMapping("/deleteUsersById")
-    public ResultData deleteUserById(@RequestBody List<Object> ids){
+    public ResultData deleteUserById(@RequestBody List<Integer> ids){
         Integer integer = iProjectService.deleteUsersById(ids);
         if (integer>0){
             return super.delectSuccess(integer);
