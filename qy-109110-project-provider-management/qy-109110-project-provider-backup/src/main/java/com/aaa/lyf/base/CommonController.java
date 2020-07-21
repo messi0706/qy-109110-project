@@ -122,7 +122,7 @@ public ResultData delete(@RequestBody Map map) {
  * @return com.aaa.lee.base.ResultData
  * @throws
  **/
-public ResultData batchDelete(@RequestParam("ids[]") Object[] ids) {
+public ResultData batchDelete(@RequestParam("ids[]") Integer[] ids) {
         Integer deleteResult = getBaseService().deleteByIds(Arrays.asList(ids));
         if(deleteResult > 0) {
         return super.operationSuccess();
