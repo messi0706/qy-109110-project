@@ -45,7 +45,7 @@ public class MenuController extends BaseController {
     public ResultData<Menu> insertMenuOrButton(@RequestBody Menu menu){
         Boolean aBoolean = menuService.insertMenuOrButton(menu);
         if (true == aBoolean){
-            return super.insertSuccess();
+            return super.insertSuccess(aBoolean);
         }else {
             return super.insertFalse();
         }
@@ -62,7 +62,7 @@ public class MenuController extends BaseController {
     public ResultData<Menu> updateMenuOrButton(@RequestBody Menu menu){
         Boolean aBoolean = menuService.updateMenuOrButton(menu);
         if (true == aBoolean){
-            return super.updateSuccess();
+            return super.updateSuccess(aBoolean);
         }else {
             return super.updateFalse();
         }
@@ -79,7 +79,7 @@ public class MenuController extends BaseController {
     public ResultData<Menu> deleteMenuOrButton(@RequestParam("menuId") Long menuId){
         Boolean aBoolean = menuService.deleteMenuOrButton(menuId);
         if (aBoolean == true){
-            return super.delectSuccess();
+            return super.delectSuccess(aBoolean);
         }else {
             return super.delectFalse();
         }

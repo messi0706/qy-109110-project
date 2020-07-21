@@ -3,6 +3,7 @@ package com.aaa.lyf.service;
 import com.aaa.lyf.base.BaseService;
 import com.aaa.lyf.mapper.DictMapper;
 import com.aaa.lyf.model.Dict;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ public class DictService extends BaseService<Dict> {
      * @return
      */
     public PageInfo<Dict> selectAllDictByPage(Dict dict,Integer pageNo,Integer pageSizez){
+        PageHelper.startPage(pageNo,pageSizez);
         try {
             //并不是每次都调用xxxmapper里面的方法，所以不一定用到dictMapper
             //调用父类(就是继承的BaseService)分页方法把参数穿进去查询

@@ -73,7 +73,7 @@ public class UserController extends CommonController<User> {
      * @return
      **/
     @PostMapping("/delectMoreUser")
-    public Integer deleteMoreUser(@RequestBody List<Object> ids){
+    public Integer deleteMoreUser(@RequestBody List<Integer> ids){
         return userService.deleteMoreUser(ids);
     }
     /**

@@ -123,7 +123,7 @@ public class UserService extends BaseService<User> {
      * @return
      *
      * @param ids*/
-    public Integer deleteMoreUser(List<Object> ids){
+    public Integer deleteMoreUser(List<Integer> ids){
         //判断前段是否传值成功
         if (!"".equals(ids) && null !=ids){
             try {

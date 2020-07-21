@@ -70,7 +70,7 @@ public class UserController extends BaseController {
     public ResultData deleteUser(User user){
         Integer integer = iProjectService.deleteUser(user);
         if (integer>0){
-            return super.delectSuccess();
+            return super.delectSuccess(integer);
 
         }
         return super.delectFalse();
@@ -87,7 +87,7 @@ public class UserController extends BaseController {
     public ResultData deleteUserById(@RequestBody List<Object> ids){
         Integer integer = iProjectService.deleteUsersById(ids);
         if (integer>0){
-            return super.delectSuccess();
+            return super.delectSuccess(integer);
         }
         return super.delectFalse();
     }
@@ -121,7 +121,7 @@ public class UserController extends BaseController {
     public ResultData updateUserById(User user){
         Integer integer = iProjectService.updateUserById(user);
         if (integer>0){
-            return super.updateSuccess();
+            return super.updateSuccess(integer);
         }
         return super.updateFalse();
     }

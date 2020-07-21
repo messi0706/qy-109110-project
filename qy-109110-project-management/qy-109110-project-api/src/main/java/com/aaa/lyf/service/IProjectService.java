@@ -183,10 +183,10 @@ public interface IProjectService {
     @PostMapping("/menu/deleteMenuOrButton")
     ResultData<Menu> deleteMenuOrButton(@RequestParam ("menuId") long menuId);
 
-    /**
-     * 字典
-     */
-    /**
+/**
+* 字典
+*/
+/**
      * 分页查询全部信息
      * @param dict
      * @param pageNo
@@ -235,7 +235,74 @@ public interface IProjectService {
      */
     @RequestMapping("/inserDict")
     Integer inserDict(@RequestBody Dict dict);
+/**
+ * 双随机抽查-->抽查人员
+ */
+    /**
+     * 分页查询数据
+     */
+    @RequestMapping("/selectAllCP")
+    PageInfo selectAllCP(@RequestBody CheckPerson checkPerson, @RequestParam("pageNo")Integer pageNo,@RequestParam("pageSize")Integer pageSize);
 
+    /**
+     * 修改数据
+     */
+    @RequestMapping("/updateByIdCont")
+    Integer updateByIdCont(@RequestBody CheckPerson checkPerson);
+
+    /**
+     * 删除数据
+     */
+    @RequestMapping("/delectByIdCont")
+    Integer delectByIdCont(@RequestBody CheckPerson checkPerson);
+
+    /**
+     * 新增数据
+     */
+    @RequestMapping("/insertByIdCont")
+     Integer insertByIdCont(@RequestBody CheckPerson checkPerson);
+/**
+ * 双随机抽查-->单位抽查
+ */
+    /**
+     * 分页查询
+     * @param mappingUnit
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/selectAll")
+    PageInfo selectAll(@RequestBody MappingUnit mappingUnit,
+                       @RequestParam("/pageNo") Integer pageNo,
+                       @RequestParam("/pageSize") Integer pageSize);
+
+    /**
+     * 条件分页查询
+     * @param unitName
+     * @param pageNo
+     * @param selectAllDeptByParentId
+     * @return
+     */
+    @RequestMapping("/selectByName")
+    PageInfo selectByName(@RequestParam("unitName") String unitName,
+                          @RequestParam("pafeNo")Integer pageNo,
+                          @RequestParam("pageSize")Integer pageSize);
+
+/**
+ * 项目汇交
+ */
+    /**
+     * 查询全部信息
+     * @param id
+     * @return
+     */
+     @RequestMapping("/selectAllMappPrjt")
+     List<MappingProject> selectAllMappPrjt(@RequestParam("id") Long id);
+    /**
+     * 通过类型查询信息
+     */
+    @RequestMapping("/selectByProjectT")
+     List<MappingProject>selectByProjectT(@RequestParam("projectType") String projectType);
     //dept
 
     /**
