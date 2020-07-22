@@ -52,7 +52,7 @@ public class DictService extends BaseService<Dict> {
      * @param dictId
      * @return
      */
-    public Dict selectById(Integer dictId) {
+    public Dict selectByIdD(Integer dictId) {
         //判断前段是否传值成功
         if (dictId != null){
             try {

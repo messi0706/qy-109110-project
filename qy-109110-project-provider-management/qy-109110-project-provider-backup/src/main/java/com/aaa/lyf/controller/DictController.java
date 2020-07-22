@@ -45,7 +45,7 @@ public class DictController {
      */
     @RequestMapping("/selectById")
     public Dict selectById(@RequestParam("dictId")Integer dictId){
-        Dict dict = dictService.selectById(dictId);
+        Dict dict = dictService.selectByIdD(dictId);
         if (!"".equals(dict) && null !=dict){
             return dict;
         }

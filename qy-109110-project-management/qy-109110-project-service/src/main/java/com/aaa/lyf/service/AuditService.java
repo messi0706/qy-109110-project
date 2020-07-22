@@ -1,14 +1,16 @@
 package com.aaa.lyf.service;
 
 
+import com.aaa.lyf.base.BaseService;
 import com.aaa.lyf.mapper.AuditMapper;
+import com.aaa.lyf.model.Audit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AuditService {
+public class AuditService  extends BaseService<Audit> {
     @Autowired
     private AuditMapper auditMapper;
     public List selectAuditInfo(){

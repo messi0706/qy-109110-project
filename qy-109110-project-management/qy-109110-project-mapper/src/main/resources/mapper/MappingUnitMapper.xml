@@ -68,4 +68,12 @@ form t_mapping_unit where id = #{id} order by id limit #{star},#{end}
 select id,unit_name,oa,qualification_level,certificate_code,belong_industry,linkman,phone,score
 form t_mapping_unit where unit_name = #{unitname} order by id limit #{star},#{end}
   </select>
+  <select id="selectAllMaUnitBai" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select id,unit_name,oa,qualification_level,certificate_code,belong_industry,linkman,phone,score
+    form t_mapping_unit where id=#{id} order by id limit #{star},#{end}
+  </select>
+  <select id="selectAllMaUnitHei" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select id,unit_name,oa,qualification_level,certificate_code,belong_industry,linkman,phone,score
+    form t_mapping_unit where id=#{id} order by id limit #{star},#{end}
+  </select>
 </mapper>

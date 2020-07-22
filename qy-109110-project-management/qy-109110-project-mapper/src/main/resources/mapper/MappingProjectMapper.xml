@@ -56,22 +56,22 @@
   <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.String">
      select id,project_type,project_amount,project_leader,start_date,end_date,acceptance_department,project_amount
  form t_mapping_project where project_type= #{projectType}
-  </select>
-  <select id="selectALlMp" resultMap="BaseResultMap" parameterType="java.lang.String">
-    select id,project_type,project_amount,project_leader,start_date,end_date,acceptance_department,project_amount,schedule
- form t_mapping_project  where id = #{id}
-  </select>
-  <select id="selectALlByType" resultMap="BaseResultMap" parameterType="java.lang.String">
-       select id,project_type,project_amount,project_leader,start_date,end_date,acceptance_department,project_amount,schedule
- form t_mapping_project where project_type= #{projectType}
-  </select>
-  <insert id="insertAll" parameterType="java.lang.String">
-    insert into t_mapping_project
-     (coordinate_system,meridian,project_type,management_level,funding_source,projectname,entrust_unit,accept_unit,project_amount,
-    project_leader,mobile_phone,p,hone,address,project_area,scale,sheet_number,awards_department,prize_level,project_quality_approval,
-    start_date,end_date,acceptance_report,acceptance_department,task_source,winning_time,acceptance_time,basic_content,credit_status,
-    submit_status,memo)
-    values ()
+<!--  </select>-->
+<!--  <select id="selectALlMp" resultMap="BaseResultMap" parameterType="java.lang.String">-->
+<!--    select id,project_type,project_amount,project_leader,start_date,end_date,acceptance_department,project_amount,schedule-->
+<!-- form t_mapping_project  where id = #{id}-->
+<!--  </select>-->
+<!--  <select id="selectALlByType" resultMap="BaseResultMap" parameterType="java.lang.String">-->
+<!--       select id,project_type,project_amount,project_leader,start_date,end_date,acceptance_department,project_amount,schedule-->
+<!-- form t_mapping_project where project_type= #{projectType}-->
+<!--  </select>-->
+<!--  <insert id="insertAll" parameterType="java.lang.String">-->
+<!--    insert into t_mapping_project-->
+<!--     (coordinate_system,meridian,project_type,management_level,funding_source,projectname,entrust_unit,accept_unit,project_amount,-->
+<!--    project_leader,mobile_phone,p,hone,address,project_area,scale,sheet_number,awards_department,prize_level,project_quality_approval,-->
+<!--    start_date,end_date,acceptance_report,acceptance_department,task_source,winning_time,acceptance_time,basic_content,credit_status,-->
+<!--    submit_status,memo)-->
+<!--    values ()-->
 
-  </insert>
+<!--  </insert>-->
 </mapper>

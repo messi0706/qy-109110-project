@@ -303,7 +303,46 @@ public interface IProjectService {
      */
     @RequestMapping("/selectByProjectT")
      List<MappingProject>selectByProjectT(@RequestParam("projectType") String projectType);
-    //dept
+
+/**
+* 公告栏
+* @param id
+* @return
+*/
+    /**
+     * 查询全部信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/selectAllN")
+    List<News> selectAllN(@RequestParam("id") Long id);
+
+    @GetMapping("/selectByT")
+    News selectByT(@RequestParam("/title") String title);
+
+/**
+ * 黑白名单
+ */
+    /**
+     * 白名单
+     * @param mappingUnit
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    @PostMapping("/selectAllMaUnBai")
+    PageInfo<MappingUnit> selectAllMaUnBai(@RequestBody MappingUnit mappingUnit, @RequestParam("pageNo") Integer pageNo,@RequestParam("pageSize") Integer pageSize);
+
+    /**
+     * 黑名单
+     * @param mappingUnit
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    @PostMapping("/selectAllMaUHei")
+     PageInfo<MappingUnit> selectAllMaUHei(@RequestBody MappingUnit mappingUnit, @RequestParam("pageNo") Integer pageNo, @RequestParam("pageSize") Integer pageSize);
+//dept
 
     /**
      *  递归查询根据 parentId（父id）查询该部门及其子部门

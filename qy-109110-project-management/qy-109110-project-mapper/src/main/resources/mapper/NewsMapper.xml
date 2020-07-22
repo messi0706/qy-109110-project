@@ -12,4 +12,16 @@
     <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
     <result column="body" property="body" jdbcType="LONGVARCHAR" />
   </resultMap>
+  <select id="selectAllNews" resultMap="BaseResultMap" parameterType="java.lang.String">
+ select id,title,digest,gmt_create,body from t_news where id = #{id}
+  </select>
+  <select id="selectByTitle" resultMap="BaseResultMap" parameterType="java.lang.String">
+ select <include refid="com.aaa.lyf.mapper.RoleMapper.Base_list"/> from t_news
+ <where>
+   <if test="title != null" >
+     title like "%"#{title}"%"
+   </if>
+
+ </where>
+  </select>
 </mapper>
